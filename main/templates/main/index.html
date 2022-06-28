@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Página Inicial</h1>
-    <a href="{% url 'drinks' %}">Drinks</a>
-</body>
-</html>
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <ul>
+    <li><a href="{% url 'drinks' %}">Drinks</a></li>
+    <li><a href="{% url 'bars' %}">Bares</a></li>
+    </ul>
+{% endblock %}
