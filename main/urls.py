@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, DrinkListView, DrinkCreateView, PubCreateView, PubListView, DrinkUpdateView, DrinkDeleteView
+from .views import HomeView, DrinkListView, DrinkCreateView, DrinkUpdateView, DrinkDeleteView, PubListView, PubCreateView, PubUpdateView, PubDeleteView
 
 urlpatterns = [
     path('', 
@@ -11,7 +11,7 @@ urlpatterns = [
     path('drinks/edit/<int:pk>/',
     DrinkUpdateView.as_view(), name='drink.edit'),
     path('drinks/delete/<int:pk>/',
-    DrinkListView.as_view(), name='drink.delete'),
+    DrinkDeleteView.as_view(), name='drink.delete'),
     path('pubs/', 
     PubListView.as_view(), name='pubs'),
     path('pubs/new/', 
