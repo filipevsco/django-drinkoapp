@@ -8,13 +8,6 @@ class HomeView(TemplateView):
     template_name = 'main/index.html'
 
 
-class DrinkListView(ListView):
-    model = Drink
-    queryset = Drink.objects.all().order_by('name')
-    template_name = 'main/drinks.html'
-    context_object_name = 'drinks'
-
-
 class PubListView(ListView):
     model = Pub
     queryset = Pub.objects.all().order_by('name')
@@ -37,6 +30,13 @@ class PubUpdateView(UpdateView):
 class PubDeleteView(DeleteView):
     model = Pub
     success_url = "/pubs/"
+
+
+class DrinkListView(ListView):
+    model = Drink
+    queryset = Drink.objects.all().order_by('name')
+    template_name = 'main/drinks.html'
+    context_object_name = 'drinks'
 
 
 class DrinkCreateView(CreateView):
