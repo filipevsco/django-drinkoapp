@@ -27,6 +27,17 @@ class PubCreateView(CreateView):
     success_url = "/pubs/"
 
 
+class PubUpdateView(UpdateView):
+    model = Pub
+    form_class = PubForm
+    success_url = "/pubs/"
+
+
+class PubDeleteView(DeleteView):
+    model = Pub
+    success_url = "/pubs/"
+
+
 class DrinkCreateView(CreateView):
     model = Drink
     form_class = DrinkForm
