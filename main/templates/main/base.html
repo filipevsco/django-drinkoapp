@@ -9,11 +9,20 @@
     {% block stylesheet %}{% endblock %}
 </head>
 <body>
-    <h1>Drinko</h1>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="{% url 'home' %}">Drinko</a>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+    <div class="container">
     {% block content %}
 
     {% endblock %}
-
+    </div>
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
    <script src="{% static 'js/popper.min.js' %}"></script>
    <script src="{% static 'js/bootstrap.min.js' %}"></script>
