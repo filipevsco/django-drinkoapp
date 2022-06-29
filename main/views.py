@@ -12,6 +12,7 @@ class DrinkListView(ListView):
     model = Drink
     queryset = Drink.objects.all().order_by('name')
     template_name = 'main/drinks.html'
+    context_object_name = 'drinks'
 
 
 class PubListView(ListView):
