@@ -1,2 +1,2 @@
 # django-drinkoapp
-A simple app for rating drinks and bars.
+A simple app for rating drinks and pubs.

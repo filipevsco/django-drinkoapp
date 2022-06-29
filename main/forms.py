@@ -1,11 +1,12 @@
 from django import forms
-from .models import Bar, Drink
+from .models import Pub, Drink
 
 
-class BarForm(forms.ModelForm):
+class PubForm(forms.ModelForm):
     class Meta:
-        model = Bar
+        model = Pub
         fields = ('__all__')
+
 
 class DrinkForm(forms.ModelForm):
     class Meta:

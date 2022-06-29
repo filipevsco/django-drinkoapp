@@ -10,16 +10,16 @@
       </tr>
     </thead>
     <tbody>
-      {% for bar in object_list %}
+      {% for pub in object_list %}
         <tr>
           <td>
-            <a href="#">{{ bar.name }}</a>
+            <a href="#">{{ pub.name }}</a>
           </td>
           <td class="align-middle">
-            <small class="text-muted d-block">{{ bar.description }}</small>
+            <small class="text-muted d-block">{{ pub.description }}</small>
           </td>
           <td class="align-middle">
-            <small class="text-muted d-block">{{ bar.rate }}</small>
+            <small class="text-muted d-block">{{ pub.rate }}</small>
           </td>
         </tr>
       {% endfor %}

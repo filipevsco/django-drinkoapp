@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, CreateView
-from .models import Drink, Bar
-from .forms import BarForm, DrinkForm
+from .models import Drink, Pub
+from .forms import PubForm, DrinkForm
 
 
 class HomeView(TemplateView):
@@ -14,17 +14,17 @@ class DrinkListView(ListView):
     template_name = 'main/drinks.html'
 
 
-class BarListView(ListView):
-    model = Bar
-    queryset = Bar.objects.all().order_by('name')
-    template_name = 'main/bars.html'
-    context_object_name = 'bars'
+class PubListView(ListView):
+    model = Pub
+    queryset = Pub.objects.all().order_by('name')
+    template_name = 'main/pubs.html'
+    context_object_name = 'pubs'
 
 
-class BarCreateView(CreateView):
-    model = Bar
-    form_class = BarForm
-    success_url = "/bars/"
+class PubCreateView(CreateView):
+    model = Pub
+    form_class = PubForm
+    success_url = "/pubs/"
 
 
 class DrinkCreateView(CreateView):
