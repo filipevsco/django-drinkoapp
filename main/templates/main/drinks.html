@@ -15,15 +15,19 @@
     <tbody>
       {% for drink in object_list %}
         <tr>
+            
           <td>
             <a href="#">{{ drink.name }}</a>
           </td>
+          
           <td class="align-middle">
             <small class="text-muted d-block">{{ drink.description }}</small>
           </td>
+          
           <td class="align-middle">
             <small class="text-muted d-block">{{ drink.rate }}</small>
           </td>
+          
           <td class="align-middle">
             <small class="text-muted d-block"><a href="{% url 'drink.edit' drink.pk %}">Editar</a></small>
           </td>
