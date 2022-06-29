@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
 
@@ -28,6 +28,13 @@ class PubCreateView(CreateView):
 
 
 class DrinkCreateView(CreateView):
+    model = Drink
+    form_class = DrinkForm
+    success_url = "/drinks/"
+    
+    
+#waiting tests
+class DrinkUpdateView(UpdateView):
     model = Drink
     form_class = DrinkForm
     success_url = "/drinks/"
