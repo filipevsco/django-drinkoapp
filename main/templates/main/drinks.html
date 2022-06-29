@@ -16,7 +16,7 @@
       {% for drink in object_list %}
         <tr>
             
-          <td>
+          <td class="align-middle">
             <a href="#">{{ drink.name }}</a>
           </td>
           
@@ -29,7 +29,8 @@
           </td>
           
           <td class="align-middle">
-            <small class="text-muted d-block"><a href="{% url 'drink.edit' drink.pk %}">Editar</a></small>
+            <a href="{% url 'drink.edit' drink.pk %}">Editar</a> - 
+            <a href="{% url 'drink.remove' drink.pk %}">Remover</a>
           </td>
         </tr>
       {% endfor %}
