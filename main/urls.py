@@ -17,7 +17,7 @@ urlpatterns = [
     path('pubs/new/', 
     PubCreateView.as_view(), name='pub.new'),
     path('pubs/edit/<int:pk>/', 
-    PubUpdateView.as_view(), name='pub.update'),
+    PubUpdateView.as_view(), name='pub.edit'),
     path('pubs/delete/<int:pk>/',
     PubDeleteView.as_view(), name='pub.delete'),
 ]
