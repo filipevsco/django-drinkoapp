@@ -49,6 +49,11 @@ class DrinkCreateView(CreateView):
     form_class = DrinkForm
     success_url = "/drinks/"
     
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.created_by = self.request.user
+        return super(DrinkCreateView, self).form_valid(form)
+        
     
 #waiting tests
 class DrinkUpdateView(UpdateView):
