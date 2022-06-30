@@ -30,6 +30,18 @@
             <small class="text-muted d-block">{{ pub.rate }}</small>
           </td>
           
+         <td class="align-middle">
+              <small class="text-muted d-block">
+                  {{ pub.created_by }}
+              </small>
+          </td>
+          
+          <td class="align-middle">
+              <small class="text-muted d-block">
+                  {{ pub.created_at }}
+              </small>
+          </td>
+                    
           <td class="align-middle">
             <a href="{% url 'pub.edit' pub.pk %}">Editar</a>
             <a href="{% url 'pub.delete' pub.pk %}">Remover</a>
