@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, request
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
