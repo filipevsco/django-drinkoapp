@@ -19,6 +19,11 @@ class PubCreateView(CreateView):
     model = Pub
     form_class = PubForm
     success_url = "/pubs/"
+    
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.created_by = self.request.user
+        return super(PubCreateView, self).form_valid(form)
 
 
 class PubUpdateView(UpdateView):
