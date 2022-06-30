@@ -9,6 +9,8 @@
         <th scope="col">Drink</th>
         <th scope="col">Descrição</th>
         <th scope="col">Nota</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Criado em</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
@@ -26,6 +28,14 @@
           
           <td class="align-middle">
             <small class="text-muted d-block">{{ drink.rate }}</small>
+          </td>
+          
+          <td class="align-middle">
+              <small class="text-muted d-block">{{ drink.created_by }}</small>
+          </td>
+          
+          <td class="align-middle">
+              <small class="text-muted d-block">{{ drink.created_at }}</small>
           </td>
           
           <td class="align-middle">
