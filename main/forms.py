@@ -5,8 +5,8 @@ from .models import Pub, Drink
 class PubForm(forms.ModelForm):
     class Meta:
         model = Pub
-        fields = ('__all__')
-
+        fields = ['name', 'description']
+        
 
 class DrinkForm(forms.ModelForm):
     class Meta:
