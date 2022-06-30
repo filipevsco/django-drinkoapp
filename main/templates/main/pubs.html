@@ -11,6 +11,8 @@
         <th scope="col">Bar</th>
         <th scope="col">Descrição</th>
         <th scope="col">Nota</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Criado em</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
@@ -23,17 +25,21 @@
           </td>
           
           <td class="align-middle">
-            <small class="text-muted d-block">{{ pub.description }}</small>
+            <small class="text-muted d-block">
+                {{ pub.description }}
+            </small>
           </td>
           
           <td class="align-middle">
-            <small class="text-muted d-block">{{ pub.rate }}</small>
+            <small class="text-muted d-block">
+                {{ pub.rate }}
+            </small>
           </td>
           
          <td class="align-middle">
-              <small class="text-muted d-block">
+            <small class="text-muted d-block">
                   {{ pub.created_by }}
-              </small>
+            </small>
           </td>
           
           <td class="align-middle">
