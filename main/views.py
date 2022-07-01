@@ -1,4 +1,3 @@
-from django.shortcuts import render, request
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
@@ -19,7 +18,7 @@ class PubCreateView(CreateView):
     model = Pub
     form_class = PubForm
     success_url = "/pubs/"
-    
+
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.created_by = self.request.user
@@ -48,14 +47,14 @@ class DrinkCreateView(CreateView):
     model = Drink
     form_class = DrinkForm
     success_url = "/drinks/"
-    
+
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.created_by = self.request.user
         return super(DrinkCreateView, self).form_valid(form)
-        
-    
-#waiting tests
+
+
+# waiting tests
 class DrinkUpdateView(UpdateView):
     model = Drink
     form_class = DrinkForm
