@@ -3,8 +3,11 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <a href="{% url 'pub.new' %}">Cadastrar novo bar</a>
+<div class="container pt-3">
+<div class="d-grid gap-2 d-md-block">
+  <a href="{% url 'pub.new' %}"><button class="btn btn-primary" type="button">Cadastrar novo bar</button></a>
+  <button class="btn btn-primary" type="button">Dashboard</button>
+</div>
 </div>
 <div class="container">
     <div class="row">
