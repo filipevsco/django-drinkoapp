@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
 
@@ -54,7 +54,6 @@ class DrinkCreateView(CreateView):
         return super(DrinkCreateView, self).form_valid(form)
 
 
-# waiting tests
 class DrinkUpdateView(UpdateView):
     model = Drink
     form_class = DrinkForm
@@ -64,3 +63,16 @@ class DrinkUpdateView(UpdateView):
 class DrinkDeleteView(DeleteView):
     model = Drink
     success_url = "/drinks/"
+
+
+class PubDetailView(DetailView):
+    template_name = "main/detail_pub.html"
+    context_object_name = "pub"
+    model = Pub
+
+
+class DrinkDetailView(DetailView):
+    template_name = "main/detail_drink.html"
+    context_object_name = "drink"
+    model = Drink
+

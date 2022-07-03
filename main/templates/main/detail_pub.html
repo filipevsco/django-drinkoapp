@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>{{ pub.name }}</h1>
+    <img src="{{pub.image.url}}">
+    <p>{{pub.description}}</p>
+    <p>{{pub.rate}}</p>
+    <p>{{pub.created_by}}</p>
+    <p>{{pub.created_at}}</p>
+
+</div>
+
+{% endblock %}
