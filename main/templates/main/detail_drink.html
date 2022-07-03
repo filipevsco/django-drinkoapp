@@ -4,12 +4,13 @@
 
 <div class="container">
     <h1>{{ drink.name }}</h1>
-    <img src="{{drink.image.url}}">
-    <p>{{drink.description}}</p>
-    <p>{{drink.rate}}</p>
-    <p>{{drink.created_by}}</p>
-    <p>{{drink.created_at}}</p>
-
+    <img src="{{drink.image.url}}" width="450">
+        <ul>
+    <li>{{drink.description}}</li>
+    <li>{{drink.rate}}</li>
+    <li>{{drink.created_by}}</li>
+    <li>{{drink.created_at}}</li>
+        </ul>
 </div>
 
 {% endblock %}
