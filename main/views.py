@@ -12,6 +12,7 @@ class PubListView(ListView):
     queryset = Pub.objects.all().order_by('name')
     template_name = 'main/pubs.html'
     context_object_name = 'pubs'
+    pagination = 3
 
 
 class PubCreateView(CreateView):
@@ -41,6 +42,7 @@ class DrinkListView(ListView):
     queryset = Drink.objects.all().order_by('name')
     template_name = 'main/drinks.html'
     context_object_name = 'drinks'
+    pagination = 3
 
 
 class DrinkCreateView(CreateView):
