@@ -12,7 +12,7 @@ class PubListView(ListView):
     queryset = Pub.objects.all().order_by('name')
     template_name = 'main/pubs.html'
     context_object_name = 'pubs'
-    pagination = 3
+    paginate_by = 3
 
 
 class PubCreateView(CreateView):
