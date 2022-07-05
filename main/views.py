@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
@@ -15,6 +16,7 @@ class PubListView(ListView):
     paginate_by = 3
 
 
+@login_required
 class PubCreateView(CreateView):
     model = Pub
     form_class = PubForm
@@ -26,12 +28,14 @@ class PubCreateView(CreateView):
         return super(PubCreateView, self).form_valid(form)
 
 
+@login_required
 class PubUpdateView(UpdateView):
     model = Pub
     form_class = PubForm
     success_url = "/pubs/"
 
 
+@login_required
 class PubDeleteView(DeleteView):
     model = Pub
     success_url = "/pubs/"
@@ -45,6 +49,7 @@ class DrinkListView(ListView):
     pagination = 3
 
 
+@login_required
 class DrinkCreateView(CreateView):
     model = Drink
     form_class = DrinkForm
@@ -56,12 +61,14 @@ class DrinkCreateView(CreateView):
         return super(DrinkCreateView, self).form_valid(form)
 
 
+@login_required
 class DrinkUpdateView(UpdateView):
     model = Drink
     form_class = DrinkForm
     success_url = "/drinks/"
 
 
+@login_required
 class DrinkDeleteView(DeleteView):
     model = Drink
     success_url = "/drinks/"
