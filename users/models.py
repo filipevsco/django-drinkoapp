@@ -1,3 +1,15 @@
 from django.db import models
+from diango.contrib.auth.models import AbstractUser, BaseUserManager
 
-# Create your models here.
+class UserManager(BaseUserManager):
+    
+    user_in_mogrations = True
+    
+    def _create_user(self, email, passwor, **extra_fields):
+        if not email:
+            raise ValueError("email is required")
+        email = self.normalize_email(email)
+        user = self.model(email=email, username=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        
