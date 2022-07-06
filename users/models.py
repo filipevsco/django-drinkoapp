@@ -32,9 +32,12 @@ class UserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser):
-    pass
+    email = models.EmailField("E-mail", unique=True)
+    is_staff = models.BooleanField("Menbro da Equipe", default=True)
+    
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["first_name", "last_name"]
 
     def __str__(self):
         return self.email
-        
         
