@@ -12,4 +12,7 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, username=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
+        return user
+        
+        
         
