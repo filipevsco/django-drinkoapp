@@ -13,11 +13,10 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <h1>[DRINKO]</h1>
+            <h1>DRINKO.</h1>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="{% url 'pubs' %}" class="nav-link px-2 text-white">Pubs</a></li>
           <li><a href="{% url 'drinks' %}" class="nav-link px-2 text-white">Drinks</a></li>
         </ul>
@@ -26,18 +25,26 @@
           <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
         </form>
 
+        {% if user.is_authenticated %}
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <a href="#"><button type="button" class="btn btn-outline-light me-2">{{ user }}</button></a>
+          <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning">Logout</button></a>
         </div>
+        {% else %}
+        <div class="text-end">
+          <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="#"><button type="button" class="btn btn-warning">Sign-up</button>
+        </div>
+        {% endif %}
+
       </div>
     </div>
   </header>
-
+  <div class="container">
     {% block content %}
 
     {% endblock %}
-
+  </div>
   <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">

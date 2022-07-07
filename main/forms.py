@@ -11,4 +11,4 @@ class PubForm(forms.ModelForm):
 class DrinkForm(forms.ModelForm):
     class Meta:
         model = Drink
-        fields = ['name', 'description', 'rate', 'image']
+        fields = ['name', 'bar', 'description', 'rate', 'image']
