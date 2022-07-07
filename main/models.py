@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from users.models import CustomUser
 from stdimage import StdImageField
 
 RATING = (
@@ -16,7 +16,7 @@ class Pub(models.Model):
     name = models.CharField(max_length=20, unique=True)
     description = models.CharField(max_length=250)
     rate = models.PositiveIntegerField(choices=RATING, blank=False, default="-")
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bar")
+    created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="bar")
     created_at = models.DateTimeField(auto_now_add=True)
     image = StdImageField(upload_to='static/img/', variations={'thumbnail': {"width": 300, "height": 400, "crop": True}}, blank=True, null=True)
 
@@ -29,7 +29,7 @@ class Drink(models.Model):
     description = models.CharField(max_length=250)
     bar = models.ForeignKey(Pub, on_delete=models.CASCADE, related_name="drinks")
     rate = models.PositiveIntegerField(choices=RATING, blank=False, default="-")
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='drinks')
+    created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='drinks')
     created_at = models.DateTimeField(auto_now_add=True)
     image = StdImageField(upload_to='static/img/', variations={'thumbnail': {"width": 300, "height": 400, "crop": True}}, blank=True, null=True)
 

@@ -1,11 +1,12 @@
 from django.db import models
-from diango.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+
 
 class UserManager(BaseUserManager):
     
-    user_in_mogrations = True
+    user_in_migrations = True
     
-    def _create_user(self, email, passwor, **extra_fields):
+    def _create_user(self, email, password, **extra_fields):
         if not email:
             raise ValueError("email is required")
         email = self.normalize_email(email)
@@ -33,11 +34,12 @@ class UserManager(BaseUserManager):
 
 class CustomUser(AbstractUser):
     email = models.EmailField("E-mail", unique=True)
-    is_staff = models.BooleanField("Menbro da Equipe", default=True)
+    is_staff = models.BooleanField("Membro da Equipe", default=True)
     
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name"]
 
     def __str__(self):
         return self.email
-        
+
+    objects = UserManager()
