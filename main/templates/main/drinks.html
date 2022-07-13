@@ -16,7 +16,7 @@
         {% for drink in drinks %}
           <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 pt-4">
             <div class="card h-100">
-              <img src="{{drink.image.thumbnail.url}}" class="card-img-top" alt="...">
+              <a href="{% url 'drink.detail' drink.pk %}"><img src="{{drink.image.thumbnail.url}}" class="card-img-top" alt="..."></a>
               <div class="card-body">
                 <a href="{% url 'drink.detail' drink.pk %}"><h5 class="card-title">{{drink.name}}</h5></a>
                 <p class="card-text">{{drink.description}}</p>
