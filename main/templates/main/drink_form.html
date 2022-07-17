@@ -5,8 +5,9 @@
 <div class="container pt-3">
     <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        {{ form.as_p }}
-
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
         <button type="submit">enviar</button>
     </form>
 </div>
