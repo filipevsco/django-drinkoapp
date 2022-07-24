@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="container">
+    <div class="card mb-3">
     <h1>{{ drink.name }}</h1>
     <img src="{{drink.image.url}}" width="450">
         <ul>
@@ -11,6 +12,7 @@
     <li>{{drink.created_by}}</li>
     <li>{{drink.created_at}}</li>
         </ul>
+    </div>
 </div>
 
 {% endblock %}
