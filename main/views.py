@@ -1,5 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import (
+    TemplateView, ListView,
+    CreateView, UpdateView,
+    DeleteView, DetailView)
+    
 from .models import Drink, Pub
 from .forms import PubForm, DrinkForm
 
