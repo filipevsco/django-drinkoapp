@@ -1,14 +1,13 @@
 from django.contrib.auth.decorators import login_required
+from .models import Drink, Pub
+from .forms import PubForm, DrinkForm
 from django.views.generic import (
     TemplateView, ListView,
     CreateView, UpdateView,
     DeleteView, DetailView
     )
     
-from .models import Drink, Pub
-from .forms import PubForm, DrinkForm
-
-
+    
 class HomeView(TemplateView):
     template_name = 'main/index.html'
 
